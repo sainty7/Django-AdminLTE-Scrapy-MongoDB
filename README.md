@@ -1,5 +1,5 @@
-# Django-AdminLTE
-PPT real-time display web system 
+# Django-AdminLTE-Scrapy-MongoDB
+ Predicting your first job by machine learning
 
 Introductions:
 
