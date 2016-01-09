@@ -172,7 +172,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="/logout/" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -376,7 +376,7 @@
     <section class="content">
       <div class="row">
         <div class="col-md-3">
-          <a href="http://10.239.13.22:8080/index/" class="btn btn-primary btn-block margin-bottom">Compose</a>
+          <a href="/index/" class="btn btn-primary btn-block margin-bottom">Compose</a>
 
           <div class="box box-solid">
             <div class="box-header with-border">
@@ -462,15 +462,15 @@
                   <tbody >
                  {% for filename,content in filename_content.items %}
 		              <tr>
-                    <td><input type="checkbox" name="{{filename}}">Hello</td>
+                    <td><input type="checkbox" name="{{filename}}"></td>
                     <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-                    <td class="mailbox-name">{{username}}</td>
+                    <td class="mailbox-name"></td>
                     <td 
                     class="mailbox-subject">
-                    <a href="http://10.239.13.22:8080/read/{{filename}}"><b>{{filename}}</b></a>{{content}} 
+                    <a href="/read/{{filename}}"><b>{{filename}}</b></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{content}} 
                     </td>
                     <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
-                    <td class="mailbox-date">5 mins ago</td>
+                    <td class="mailbox-date"></td>
 		             </tr>	
 		             {% endfor %}
 		          </tbody>
@@ -479,32 +479,6 @@
               </div>
               <!-- /.mail-box-messages -->
             </div>
-            <!-- /.box-body -->
-            <div class="box-footer no-padding">
-              <div class="mailbox-controls">
-                <!-- Check all button -->
-                <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
-                </button>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                </div>
-                <!-- /.btn-group -->
-                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
-                <div class="pull-right">
-                  1-50/200
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
-                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
-                  </div>
-                  <!-- /.btn-group -->
-                </div>
-                <!-- /.pull-right -->
-              </div>
-            </div>
-          </div>
-          <!-- /. box -->
         </div>
         <!-- /.col -->
       </div>
@@ -740,7 +714,7 @@
               $.ajax
               ({
                   type : "GET", 
-                  url : "http://10.239.13.22:8080/delete/"+n+"/",
+                  url : "/delete/"+n+"/",
                   dataType : "json",
                  // success:function(msg){ 
                   //  $("table#table1").find("tr:eq("+n+")").remove();

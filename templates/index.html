@@ -291,7 +291,7 @@
             </li>
             <li class="treeview active">
               <a href="mailbox.html">
-                <i class="fa fa-envelope"></i> <span>Mailbox</span>
+                <i class="fa fa-envelope"></i> <span>File</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -354,12 +354,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Mailbox
+            File
             <small>13 new messages</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Mailbox</li>
+            <li class="active">File</li>
           </ol>
         </section>
 
@@ -376,7 +376,7 @@
 
             <div class="col-md-3">
 
-              <a href="http://10.239.13.22:8080/list/" class="btn btn-primary btn-block margin-bottom">Back to Inbox</a>
+              <a href="/list/" class="btn btn-primary btn-block margin-bottom">Back to Inbox</a>
               <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Folders</h3>
@@ -387,7 +387,7 @@
                 <div class="box-body no-padding">
                   <ul class="nav nav-pills nav-stacked">
                     <li><a href="mailbox.html"><i class="fa fa-inbox"></i> FIle <span class="label label-primary pull-right"></span></a></li>
-                    <li><a href="http://10.239.13.22:8080/read/"><i class="fa fa-file-text-o"></i> Drafts</a></li>
+                    <li><a href="/read/"><i class="fa fa-file-text-o"></i> Drafts</a></li>
                     <li><a href="#"><i class="fa fa-filter"></i> Junk <span class="label label-warning pull-right">65</span></a></li>
                     <li><a href="#"><i class="fa fa-trash-o"></i> Trash</a></li>
                   </ul>
@@ -412,19 +412,15 @@
             
 
 
-            <form action="http://10.239.13.22:8080/send/" enctype="multipart/form-data"  method="post" class="sidebar-form">{% csrf_token %}
+            <form action="/send/" enctype="multipart/form-data"  method="post" class="sidebar-form">{% csrf_token %}
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Compose New File</h3>
+                  <h3 class="box-title">Submit New File</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <div class="form-group">
-                    <input class="form-control" name = "filename" placeholder="Filename:">
-                  </div>
-                  <div class="form-group">
-                    <textarea id="compose-textarea" name = "note"  class="form-control" style="height: 300px" placeholder="Note:">
-                    </textarea>
+                    <input class="form-control" name = "note" placeholder="Please descript your file:">
                   </div>
                   <div class="form-group">
                     <div class="btn btn-default btn-file">

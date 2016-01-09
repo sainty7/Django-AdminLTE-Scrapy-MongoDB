@@ -173,7 +173,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="/logout/" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -304,7 +304,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="mailbox.html">Inbox <span class="label label-primary pull-right">13</span></a></li>
-            <li><a href="10.239.13.22:8080/list/">Back</a></li>
+            <li><a href="/list/">Back</a></li>
             <li class="active"><a href="read-mail.html">Read</a></li>
           </ul>
         </li>
@@ -375,7 +375,7 @@
     <section class="content">
       <div class="row">
         <div class="col-md-3">
-          <a href="http://10.239.13.22:8080/list/" class="btn btn-primary btn-block margin-bottom">Back</a>
+          <a href="/list/" class="btn btn-primary btn-block margin-bottom">Back</a>
 
           <div class="box box-solid">
             <div class="box-header with-border">
@@ -760,8 +760,15 @@
 	 
          for(var i=0; i<2;i++)
          {
-	    var li = $('<li><img src="/static/images/{{username}}/{{filename}}-'+i+'.jpg" alt="image description"/></li>');
-	    $('#ul1').append(li);
+	    if (parseInt({{identity}}) == 1){
+	    var file = '{{filename}}';
+	    var user = file.split('-');
+	    var li = $('<li><img src="/static/images/{{id}}/'+user[0]+'/{{filename}}-'+i+'.jpg" alt="image description"/></li>');
+	    $('#ul1').append(li);}
+	    else{
+	    var li = $('<li><img src="/static/images/{{id}}/{{username}}/{{filename}}-'+i+'.jpg" alt="image description"/></li>');
+	    $('#ul1').append(li);		
+		}
          }
          var sudoSlider = $("#slider").sudoSlider({ 
          continuous:true,
